@@ -18,7 +18,7 @@ const getRank = async (nftId) => {
 
 let count = 0;
 
-var setLOadMoreFill = (function() {
+var setLoadMoreFill = (function() {
     var executed = false;
     return function() {
         if (!executed) {
@@ -41,10 +41,10 @@ const readAndFill = () => {
       if(main.children('div').eq(0).children('div').eq(0).children('h1').eq(0).text() === ""){
         let res = await getRank(main.children('a').eq(0).children().eq(0).text().split('#')[1])
         main.children('div').eq(0).children('div').eq(0).css({'justify-content': 'space-between', 'display': 'flex'})
-        main.children('div').eq(0).children('div').eq(0).append(`<h1>Rank: ${res}`)
+        main.children('div').eq(0).children('div').eq(0).append(`<h1>Rank: ${res}</h1>`)
       }
   });
-  setLOadMoreFill()
+  setLoadMoreFill()
 }
 
 readAndFill();
